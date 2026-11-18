@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experiment analysis</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Experiment analysis</span>
+  </div>
+  <div class="topbar-actions">
+    <label class="field-inline">
+      <span>Experiment</span>
+      <select id="experiment-select" aria-label="Select experiment"></select>
+    </label>
+    <label class="field-inline">
+      <span>Version</span>
+      <select id="version-select" aria-label="Select version"></select>
+    </label>
+    <button class="btn ghost" id="theme-toggle" type="button" aria-label="Toggle theme">◐</button>
+    <button class="btn" id="new-experiment" type="button">New experiment</button>
+  </div>
+</header>
+
+<main id="app" class="page">
+  <section class="hero">
+    <div>
+      <p class="eyebrow" id="exp-eyebrow">Loading…</p>
+      <h1 id="exp-title">Experiment analysis</h1>
+      <p class="subtitle" id="exp-subtitle"></p>
+    </div>
+    <div class="hero-status" id="hero-status"></div>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Analysis views">
+    <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button role="tab" data-tab="balance">Allocation balance</button>
+    <button role="tab" data-tab="attrition">Sample loss</button>
+    <button role="tab" data-tab="metrics">Metric differences</button>
+    <button role="tab" data-tab="versions">Versions &amp; snapshots</button>
+    <button role="tab" data-tab="checks">Verification</button>
+  </nav>
+
+  <div id="view" class="view" role="tabpanel"></div>
+</main>
+
+<dialog id="dialog">
+  <form id="dialog-form" method="dialog"></form>
+</dialog>
+
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>
